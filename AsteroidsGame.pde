@@ -16,7 +16,7 @@ public void draw()
   background(0);
   for(int i = 0; i < heart.size(); i++){
     heart.get(i).move();
-    if(dist((float)j.getX(), (float)j.getY(), (float)heart.get(i).getX(), (float)heart.get(i).getY()) < 16){
+    if(dist((float)j.getX(), (float)j.getY(), (float)heart.get(i).getX(), (float)heart.get(i).getY()) < 20){
       heart.remove(i);
       i--;
       break;
