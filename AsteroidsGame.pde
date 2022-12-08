@@ -1,19 +1,18 @@
-Spaceship j = new Spaceship();
-ArrayList <Asteroid> heart = new ArrayList <Asteroid>();
-Star[] nightSky = new Star[300];
-public void setup()
 {
-  size(500, 500);
+  size(1000, 500);
   for(int i = 0; i < nightSky.length; i++){
     nightSky[i] = new Star();
   }
-  for(int h = 0; h < 16; h++){
+  for(int h = 0; h < 32; h++){
     heart.add(h, new Asteroid());
   }
 }
 public void draw()
 {
   background(0);
+  for(int i = 0; i < nightSky.length; i++){
+    nightSky[i].show();
+  }
   for(int i = 0; i < heart.size(); i++){
     heart.get(i).move();
     if(dist((float)j.getX(), (float)j.getY(), (float)heart.get(i).getX(), (float)heart.get(i).getY()) < 20){
@@ -25,9 +24,7 @@ public void draw()
   }
   j.move();
   j.show();
-  for(int i = 0; i < nightSky.length; i++){
-    nightSky[i].show();
-  }
+  
 }
 public void keyPressed() {
   if (key == 'a' || key == 'A') {
